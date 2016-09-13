@@ -1,6 +1,6 @@
 // Klasy pozycji dla span CIRCLE i ARROW
 
-// Wagon 1 klasy
+// Wagon 1
 //Rząd a
 $i: 1;
 $k: 127px;
@@ -34,7 +34,7 @@ $k: 157px;
   $k: $k + 30; 
   }
 
-// Wagon 2 klasy
+// Wagon 2 i 4
 //Rząd a i b
 $i: 1;
 $k: 163px;
@@ -92,6 +92,34 @@ $k: 182px;
   $k: $k + 31; 
   }
 
+// Wagon 5,6 i 7
+//Rząd a i b
+$i: 1;
+$k: 163px;
+ @while $i <= 19 {
+          .posleft#{$i} {
+         left: $k;     
+      } 
+   .posleft#{$i}b {
+         left: $k;   
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }   
+
+//Rząd c i d
+$i: 1;
+$k: 195px;
+ @while $i <= 19 {
+          .posleft#{$i}c {
+         left: $k;
+      } 
+    .posleft#{$i}d {
+         left: $k;
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }
 
 
 

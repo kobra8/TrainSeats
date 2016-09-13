@@ -51,6 +51,9 @@ $(function() {
           break;
         case "7":
          divimg.css("background-image", 'url("./img/cab_7.jpg")');
+           $('select[class^="cab"]').hide();
+           $("#seatopt").show();
+           $(".cab7").show();
           break;
       default:
           divimg.css("background-image", 'url("./img/selectcab.jpg")');  
@@ -132,10 +135,10 @@ $(function() {
         
     } 
       
-     // Wagon 4 5 6  
+     // Wagon 4 
       else if (cabnumber == 4) {
         var seat = $(".cab456").val();
-        for (var i = 1; i<=17; i++) {
+        for (var i = 1; i<=19; i++) {
         if(seat == i) {
           arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos3a pos2kl"+i).fadeIn(2000);
@@ -155,6 +158,31 @@ $(function() {
       }
         
     }  
+      
+  // Wagon 5, 6 i 7 
+      else if ((cabnumber == 5) || (cabnumber == 6)){
+        var seat = $(".cab456").val();
+        for (var i = 1; i<=19; i++) {
+        if(seat == i) {
+          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i).fadeIn(1000);
+          circle.attr('class','circle').addClass("pos4d posleft"+i).fadeIn(2000);
+        }
+        else if(seat == i+'b') {
+          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"b").fadeIn(1000);
+          circle.attr('class','circle').addClass("pos4c posleft"+i+"b").fadeIn(2000);
+        }
+        else if(seat == i+'c') {
+          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          circle.attr('class','circle').addClass("pos3b posleft"+i+"c").fadeIn(2000);
+        }
+        else if(seat == i+'d') {
+          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          circle.attr('class','circle').addClass("pos3a posleft"+i+"c").fadeIn(2000);
+        }  
+      }
+        
+    }      
+      
       
       
     });
