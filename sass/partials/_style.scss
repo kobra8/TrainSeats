@@ -27,7 +27,7 @@ body {
   section {
     padding: $padding-section;
     .cabin{
-        background-image: url("../img/cab_1.jpg");
+        background-image: url("../img/selectcab.jpg");
         background-repeat: no-repeat;
         background-position: center;
         height: 414px;
@@ -36,22 +36,83 @@ body {
     .circle {
       border: 4px solid $circle-color;
       background-color: transparent;
-      width: 25px;
+      width: 30px;
       height: 25px;
-          @include borderRadius(50%);
+          //@include borderRadius(50%);
           position: absolute;
           top: 54px;
+          display: none;
           }
     .arrow {
       color: white;
       position: absolute;
       top: 0;
-      
+      display: none;
+      }
+    
+//    Pozycje wertykalne miejsc wagonu klasy 1
+    
+    .pos1b {
+      top: 74px;
     }
-    .pos0 {
+    .pos1c {
+      top: 114px;
+    }
+    
+    //    Pozycje wertykalne miejsc wagonu klasy 2
+    .pos2a {
+      top: 50px;
+    }
+    .pos2b {
+      top: 65px;
+    }
+    .pos2c {
+      top: 96px;
+    }
+    .pos2d {
+      top: 115px;
+    }
+    
+    //Pozycje dodatkowe wagonu 4
+    
+    .pos4c {
+      top: 102px;
+    }
+    .pos4d {
+      top: 117px;
+    }
+    
+    //    Pozycje wertykalne miejsc wagonu nr 3 i
+    .pos3a {
+      top: 54px;
+    }
+    .pos3b {
+      top: 70px;
+    }
+    .pos3c {
+      top: 99px;
+    }
+    .pos3d {
+      top: 115px;
+    }
+    #seatopt {
       display: none;
     }
-      }
+    select[class^="cab"] {
+      display: none;
+    }
+ 
+    
+    
+  } //Koniec SECTION
+  
+  
+  
+  
+  
+  
+  
+  
   footer {
     .main-width {
           ul.menu {
@@ -67,4 +128,4 @@ body {
                   }
                 }
         }
-    }
+    } // Koniec BODY

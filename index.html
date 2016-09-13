@@ -26,8 +26,9 @@
     <section class="main-width">
       <form>
         <label> Wybierz numer wagonu:
-      <select name="cabin" class="cabinopt">
-        <option value="1" selected>1</option>
+      <select name="cabin" class="optcab">
+        <option value="0">--</option>
+        <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -37,26 +38,273 @@
       </select>
     </label>
     <br>
-    <label> Wybierz numer miejsca:
-      <select name="seat" class="seat">
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="31">31</option>
-        <option value="32">32</option>
+    <label id="seatopt"> Wybierz numer miejsca:
+      
+<!--      Wagon 1 -->
+      <select name="seat" class="cab1">
+        <option value="1c">12</option>
+        <option value="1b">14</option>
+        <option value="1">15</option>
+        <option value="2">16</option>
+        
+        <option value="2c">21</option>
+        <option value="3c">22</option>
+        <option value="2b">23</option>
+        <option value="3b">24</option>
+        <option value="3">25</option>
+        <option value="4">26</option>
+        
+        <option value="4c">31</option>
+        <option value="5c">32</option>
+        <option value="4b">33</option>
+        <option value="5b">34</option>
+        <option value="5">35</option>
+        <option value="6">36</option>
+        
+        <option value="6c">41</option>
+        <option value="7c">42</option>
+        <option value="6b">43</option>
+        <option value="7b">44</option>
+        <option value="7">45</option>
+        <option value="8">46</option>
+        
+        <option value="8c">51</option>
+        <option value="9c">52</option>
+        <option value="8b">53</option>
+        <option value="9b">54</option>
+        <option value="9">55</option>
+        <option value="10">56</option>
+        
+        <option value="10c">61</option>
+        <option value="11c">62</option>
+        <option value="10b">63</option>
+        <option value="11b">64</option>
+        <option value="11">65</option>
+        <option value="12">66</option>
+        
+        <option value="12c">71</option>
+        <option value="13c">72</option>
+        <option value="12b">73</option>
+        <option value="13b">74</option>
+        <option value="13">75</option>
+        <option value="14">76</option>
+        
+        <option value="14c">81</option>
+        <option value="15c">82</option>
+        <option value="14b">83</option>
+        <option value="15">85</option>
+        <option value="16">86</option>
+      </select>
+      
+      <!--      Wagon 2 -->
+
+      <select name="seat" class="cab2">
+        <option value="1d">12</option>
+        <option value="2b">14</option>
+        <option value="1">15</option>
+        <option value="2">16</option>
+        <option value="1b">17</option>
+        <option value="1c">18</option>
+        
+        <option value="2d">21</option>
+        <option value="3d">22</option>
+        <option value="2c">23</option>
+        <option value="4b">24</option>
+        <option value="3">25</option>
+        <option value="4">26</option>
+        <option value="3b">27</option>
+        <option value="3c">28</option>
+        
+        <option value="4d">31</option>
+        <option value="5d">32</option>
+        <option value="4c">33</option>
+        <option value="6b">34</option>
+        <option value="5">35</option>
+        <option value="6">36</option>
+        <option value="5b">37</option>
+        <option value="5c">38</option>
+        
+        <option value="6d">41</option>
+        <option value="7d">42</option>
+        <option value="6c">43</option>
+        <option value="8b">44</option>
+        <option value="7">45</option>
+        <option value="8">46</option>
+        <option value="7b">47</option>
+        <option value="7c">48</option>
+        
+        <option value="8d">51</option>
+        <option value="9d">52</option>
+        <option value="8c">53</option>
+        <option value="10b">54</option>
+        <option value="9">55</option>
+        <option value="10">56</option>
+        <option value="9b">57</option>
+        <option value="9c">58</option>
+        
+        <option value="10d">61</option>
+        <option value="11d">62</option>
+        <option value="10c">63</option>
+        <option value="11">65</option>
+        <option value="11b">67</option>
+        <option value="11c">68</option>
+        
+        <option value="71">71</option>
+        <option value="72">72</option>
+        <option value="73">73</option>
+        <option value="78">78</option>
+        
+        <option value="81">81</option>
+        <option value="82">82</option>
+        <option value="83">83</option>
+        <option value="88">88</option>
+        
+        <option value="91">91</option>
+        <option value="92">92</option>
+        <option value="93">93</option>
+        <option value="98">98</option>
+      </select>
+
+      
+      <!--      Wagon 3 resturacyjny -->
+      
+      <select name="seat" class="cab3">
+        <option value="1d">11</option>
+        <option value="3d">12</option>
+        <option value="1c">13</option>
+        <option value="1b">14</option>
+        
+        <option value="1">16</option>
+        <option value="3c">18</option>
+        
+        <option value="4d">21</option>
+        <option value="5d">22</option>
+        <option value="4c">23</option>
+        <option value="3b">24</option>
+        <option value="2">25</option>
+        <option value="3">26</option>
+        <option value="2b">27</option>
+        <option value="5c">28</option>
+        
+        <option value="6d">31</option>
+        <option value="6c">33</option>
+        <option value="4">35</option>
+        <option value="4b">37</option>
+        
+      </select>
+
+      
+      <!--      Wagony 4 5 i 6 -->
+
+      <select name="seat" class="cab456">
+        <option value="1">11</option>
+        <option value="2">12</option>
+        <option value="1b">13</option>
+        <option value="1c">14</option>
+        <option value="1d">16</option>
+        <option value="2b">18</option>
+        
+        
+        <option value="3">21</option>
+        <option value="4">22</option>
+        <option value="3b">23</option>
+        <option value="3c">24</option>
+        <option value="2d">25</option>
+        <option value="3d">26</option>
+        <option value="2c">27</option>
+        <option value="4b">28</option>
+        
+        <option value="5">31</option>
+        <option value="6">32</option>
+        <option value="5b">33</option>
+        <option value="5c">34</option>
+        <option value="4d">35</option>
+        <option value="5d">36</option>
+        <option value="4c">37</option>
+        <option value="6b">38</option>
+        
+        <option value="7">41</option>
+        <option value="8">42</option>
+        <option value="7b">43</option>
+        <option value="7c">44</option>
+        <option value="6d">45</option>
+        <option value="7d">46</option>
+        <option value="6c">47</option>
+        <option value="8b">48</option>
+        
+        <option value="9">51</option>
+        <option value="10">52</option>
+        <option value="9b">53</option>
+        <option value="9c">54</option>
+        <option value="8d">55</option>
+        <option value="9d">56</option>
+        <option value="8c">57</option>
+        <option value="10b">58</option>
+        
+        <option value="11">61</option>
+        <option value="12">62</option>
+        <option value="11b">63</option>
+        <option value="11c">64</option>
+        <option value="10d">65</option>
+        <option value="11d">66</option>
+        <option value="10c">67</option>
+        <option value="12b">68</option>
+        
+        <option value="13">71</option>
+        <option value="14">72</option>
+        <option value="13b">73</option>
+        <option value="13c">74</option>
+        <option value="12d">75</option>
+        <option value="13d">76</option>
+        <option value="12c">77</option>
+        <option value="14b">78</option>
+        
+        <option value="15">81</option>
+        <option value="16">82</option>
+        <option value="15b">83</option>
+        <option value="15c">84</option>
+        <option value="14d">85</option>
+        <option value="15d">86</option>
+        <option value="14c">87</option>
+        <option value="16b">88</option>
+        
+        <option value="17">91</option>
+        <option value="18">92</option>
+        <option value="17b">93</option>
+        <option value="17c">94</option>
+        <option value="16d">95</option>
+        <option value="17d">96</option>
+        <option value="16c">97</option>
+        <option value="18b">98</option>
+        
+        <option value="19">101</option>
+        <option value="19b">103</option>
+        <option value="18d">105</option>
+        <option value="18c">107</option>
+      </select>
+
+      
+      <!--      Wagon 7 -->
+<!--
+      <select name="seat" class="cab7">
+        <option value="1">11</option>
+        <option value="2">12</option>
+        <option value="3">13</option>
+        <option value="4">14</option>
+        <option value="5">15</option>
+        <option value="6">16</option>
+        <option value="7">18</option>
+        <option value="8">19</option>
+        <option value="9">21</option>
+        <option value="10">22</option>
+        <option value="11">23</option>
+        <option value="12">24</option>
+        <option value="13">25</option>
+        <option value="14">26</option>
+        <option value="15">27</option>
+        <option value="16">28</option>
+        <option value="17">31</option>
+        <option value="18">32</option>
         <option value="33">33</option>
         <option value="34">34</option>
         <option value="35">35</option>
@@ -116,6 +364,8 @@
         <option value="105">105</option>
         <option value="107">107</option>
       </select>
+-->
+      
       <button class="show">Pokaż miejsce</button>
     </label>
   </form> 

@@ -1,3 +1,141 @@
+// Klasy pozycji dla span CIRCLE i ARROW
+
+// Wagon 1 klasy
+//Rząd a
+$i: 1;
+$k: 127px;
+ @while $i <= 16 {
+          .pos1kl#{$i} {
+         right: $k;     
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }   
+
+//Rząd b
+$i: 1;
+$k: 157px;
+ @while $i <= 14 {
+          .pos1kl#{$i}b {
+         right: $k;   
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }
+
+//Rząd c
+$i: 1;
+$k: 157px;
+ @while $i <= 15 {
+          .pos1kl#{$i}c {
+         right: $k;
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }
+
+// Wagon 2 klasy
+//Rząd a i b
+$i: 1;
+$k: 163px;
+ @while $i <= 19 {
+          .pos2kl#{$i} {
+         right: $k;     
+      } 
+   .pos2kl#{$i}b {
+         right: $k;   
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }   
+
+//Rząd c i d
+$i: 1;
+$k: 195px;
+ @while $i <= 19 {
+          .pos2kl#{$i}c {
+         right: $k;
+      } 
+    .pos2kl#{$i}d {
+         right: $k;
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }
+
+// Wagon resturacyjny (nr 3)
+//Rząd a i b
+$i: 1;
+$k: 240px;
+ @while $i <= 6 {
+          .posrest#{$i} {
+        left: $k;     
+      } 
+   .posrest#{$i}b {
+         left: $k;   
+      } 
+  $i: $i + 1;
+  $k: $k + 31; 
+  }   
+
+//Rząd c i d
+$i: 1;
+$k: 182px;
+ @while $i <= 6 {
+          .posrest#{$i}c {
+         left: $k;
+      } 
+    .posrest#{$i}d {
+         left: $k;
+      } 
+  $i: $i + 1;
+  $k: $k + 31; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Przykład pętli
+//@for $n from 1 through 4 {
+//   h#{$n} {
+//          font-size: $font-size*(5-$n)*1.3;
+//          line-height: $line-height*(5-$n)*1.3;
+//      color: lighten(#000000,15% * $n);      
+//      } 
+  
+//}
+
+//Przykład pętli z ifem
+
+//@for $i from 1 through 10 {
+//  @if $i % 2 == 0 {
+//  block_#{$i} {color: orange}
+//    }
+//  @else {
+//  block_#{$i} {color: blue}
+//    }
+//}
 
 @mixin borderRadius($radius) {
         webkit-border-radius: $radius;
@@ -5,36 +143,3 @@
         border-radius: $radius;
       }
 // według CanIUse border-radius nie potrzebuje już prefixów
-
-
-// Klasy pozycji dla span CIRCLE
-$i: 1;
-$k: 126px;
- @while $i < 18 {
-          .pos#{$i} {
-         right: $k;     
-      } 
-  $i: $i + 1;
-  $k: $k + 30; 
-  }   
-//Wariant 2 z zajęć
-@for $n from 1 through 4 {
-   h#{$n} {
-          font-size: $font-size*(5-$n)*1.3;
-          line-height: $line-height*(5-$n)*1.3;
-      color: lighten(#000000,15% * $n);      
-      } 
-  
-}
-
-//Zadanie 15
-
-@for $i from 1 through 10 {
-  @if $i % 2 == 0 {
-  block_#{$i} {color: orange}
-    }
-  @else {
-  block_#{$i} {color: blue}
-    }
-}
-
