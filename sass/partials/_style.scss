@@ -1,0 +1,70 @@
+/* Plik stworzony przez Kobra8 */
+
+body {
+  background-color: $main-background;
+  line-height: $line-height;
+  font-family: 'Raleway', sans-serif;
+  font-size: $font-size;
+    .main-width {
+        margin: 0 auto;
+        width: $main-width;
+        color: $text-color;
+                }
+    ul.menu {
+        list-style-type: none;
+          li{
+          color: $text-color;
+          background-color: $list-background;
+          padding: 10px;
+          display: inline-block;
+            }
+          li:hover {
+          color: $list-color;
+          padding-left: 10px;
+          display: inline-block;
+            }
+          }
+  section {
+    padding: $padding-section;
+    .cabin{
+        background-image: url("../img/cab_1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 414px;
+        position: relative;
+          }
+    .circle {
+      border: 4px solid $circle-color;
+      background-color: transparent;
+      width: 25px;
+      height: 25px;
+          @include borderRadius(50%);
+          position: absolute;
+          top: 54px;
+          }
+    .arrow {
+      color: white;
+      position: absolute;
+      top: 0;
+      
+    }
+    .pos0 {
+      display: none;
+    }
+      }
+  footer {
+    .main-width {
+          ul.menu {
+            list-style-type: none;
+                  li{
+                display: block;
+                float: left;
+              &:hover {
+                background-color: blueviolet;
+                      }
+      
+                    }
+                  }
+                }
+        }
+    }
