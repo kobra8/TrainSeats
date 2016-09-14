@@ -92,7 +92,7 @@ $k: 182px;
   $k: $k + 31; 
   }
 
-// Wagon 5,6 i 7
+// Wagon 5,6
 //Rząd a i b
 $i: 1;
 $k: 163px;
@@ -121,7 +121,34 @@ $k: 195px;
   $k: $k + 30; 
   }
 
+// Wagon 7
+//Rząd a i b
+$i: 1;
+$k: 157px;
+ @while $i <= 19 {
+          .pos7cab#{$i} {
+         left: $k;     
+      } 
+   .pos7cab#{$i}b {
+         left: $k;   
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }   
 
+//Rząd c i d
+$i: 1;
+$k: 128px;
+ @while $i <= 19 {
+          .pos7cab#{$i}c {
+         left: $k;
+      } 
+    .pos7cab#{$i}d {
+         left: $k;
+      } 
+  $i: $i + 1;
+  $k: $k + 30; 
+  }
 
 
 

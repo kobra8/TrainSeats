@@ -11,6 +11,7 @@
   <body>
 <!--  Menu -->
     <header>
+<!--
       <div class="main-width">
         <nav>
             <ul class="menu">
@@ -20,6 +21,7 @@
             </ul>
         </nav>
       </div>
+-->
     </header>
   
 <!--  Form section -->
@@ -358,20 +360,75 @@
       </select>
 
       
-      <button class="show">Pokaż miejsce</button>
+      <button class="show">Pokaż miejsce</button> <br>
+       <label> Wybierz stację wyjazdu:
+      <select name="from" class="from">
+        <option selected value="1">Warszawa</option>
+        <option value="2">Gdańsk/ Gdynia/ Sopot</option>
+        <option value="3">Kołobrzeg/ Koszalin</option>
+        <option value="4">Słupsk/ Lębork</option>
+        <option value="5">Malbork/ Iława/ Ciechanów</bork>
+        <option value="6">Kraków</option>
+        <option value="7">Rzeszów/ Dębica</option>
+        <option value="8">Tarnów</option>
+        <option value="9">Katowice/ Zabrze/ Gliwice</option>
+        <option value="10">Sosnowiec/ Zawiercie</option>
+        <option value="11">Bielsko-Biała</option>
+        <option value="12">Częstochowa</option>
+        <option value="13">Opole</option>
+        <option value="14">Wrocław</option>
+        <option value="15">Jelenia G./ Wałbrzych</option>
+        <option value="16">Włoszczowa</option>
+      </select>
+    </label>
+    <br>
+      <label> Wybierz stację docelową:
+      <select name="dest" class="dest">
+        <option value="1">Warszawa</option>
+        <option value="2">Gdańsk/ Gdynia/ Sopot</option>
+        <option value="3">Kołobrzeg/ Koszalin</option>
+        <option value="4">Słupsk/ Lębork</option>
+        <option value="5">Malbork/ Iława/ Ciechanów</bork>
+        <option value="6">Kraków</option>
+        <option value="7">Rzeszów/ Dębica</option>
+        <option value="8">Tarnów</option>
+        <option value="9">Katowice/ Zabrze/ Gliwice</option>
+        <option value="10">Sosnowiec/ Zawiercie</option>
+        <option value="11">Bielsko-Biała</option>
+        <option value="12">Częstochowa</option>
+        <option value="13">Opole</option>
+        <option value="14">Wrocław</option>
+        <option value="15">Jelenia G./ Wałbrzych</option>
+        <option value="16">Włoszczowa</option>
+      </select>
+    </label>
+      <button class="direction">Pokaż kierunek</button>
     </label>
   </form> 
-      
-   
+    <div class="result">
+      <div class="cabname">
+        <h1>WAGON</h1>
+      </div>
+      <div class="cabnumber">
+        <h1 id="cabn"></h1>
+      </div>
+      <div class="seatname">
+        <h1>MIEJSCE</h1>
+      </div>
+      <div class="seatnumber">
+        <h1 id="seatn"></h1>
+      </div>
+    </div>  
     </section>
     
     <!--  Image section -->
     <section class="main-width">
       <div class="cabin">
-      <span class="circle"></span>
-      <span class="arrow fa fa-hand-o-down fa-4x" aria-hidden="true"></span>  
-      </div> 
-      
+        <span class="circle"></span>
+        <span class="arrow fa fa-hand-o-down fa-4x" aria-hidden="true"></span>  
+        
+       </div>
+      <div class="main-width container">
         <p>
          Strefa ciszy - wagon nr 7.
         </p>
@@ -381,12 +438,13 @@
         <p>
           Bar WARS znajduje się w wagonie nr 3.
         </p>
-   
+      </div>
+      
     </section>
 <!--  Footer -->
   
     <footer>
-      <div class="main-width">
+      <div class="main-width container">
            Footer
       </div>
     </footer>

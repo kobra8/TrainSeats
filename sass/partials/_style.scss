@@ -10,6 +10,13 @@ body {
         width: $main-width;
         color: $text-color;
                 }
+  header {
+    height: 20px;
+  }
+  .container {
+    float: left;
+    width: 100%;
+  }
     ul.menu {
         list-style-type: none;
           li{
@@ -25,13 +32,15 @@ body {
             }
           }
   section {
-    padding: $padding-section;
+  
     .cabin{
         background-image: url("../img/selectcab.jpg");
         background-repeat: no-repeat;
         background-position: center;
         height: 414px;
         position: relative;
+      float: left;
+      width: 100%;
           }
     .circle {
       border: 4px solid $circle-color;
@@ -49,6 +58,51 @@ body {
       top: 0;
       display: none;
       }
+    form {
+      float: left;
+    }
+    .result {
+      width: 300px;
+      height: 200px;
+      float: right;
+      display: none;
+      h1 {
+        text-align: center;
+      }
+      
+      .cabname {
+        width: 50%;
+        height: 100px;
+        padding-top: 40px;
+        float: left;
+      }
+      .seatname {
+        width: 50%;
+        height: 100px;
+        padding-top: 40px;
+        float: left;
+      }
+      .cabnumber {
+        width: 40%;
+        height: 40%;
+        padding-top: 7%;
+        float: right;
+        border: 4px solid white;
+        margin: 4%;
+      }
+      .seatnumber {
+        width: 40%;
+        height: 40%;
+        padding-top: 7%;
+        float: right;
+        border: 4px solid white;
+        margin: 4%;
+      }
+      #cabn, #seatn {
+        font-size: 3em;
+        display: none;
+      }
+    }
     
 //    Pozycje wertykalne miejsc wagonu klasy 1
     
@@ -82,7 +136,7 @@ body {
       top: 117px;
     }
     
-    //    Pozycje wertykalne miejsc wagonu nr 3 i
+    //    Pozycje wertykalne miejsc używane przez wagony nr 3,4 5, 6 i 7
     .pos3a {
       top: 54px;
     }
@@ -94,6 +148,15 @@ body {
     }
     .pos3d {
       top: 115px;
+    }
+    .pos7a {
+      top: 56px;
+    }
+     .pos7c {
+      top: 104px;
+    }
+    .pos7d {
+      top: 120px;
     }
     #seatopt {
       display: none;
