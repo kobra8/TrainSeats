@@ -18,9 +18,32 @@ $(function() {
   var divdir = $(".divdir");
   var arrleft = $(".arrspanleft");
   var arrright = $(".arrspanright");
+  var again = $("<h3>Twoje ostatnie wyszukiwanie:</h3>");
+  var selcab = $(".selectcab");
+  var selarrow = $(".selarrow");
+  var cookiesbutt = $(".cookiesbutt");
+  var cookiesdiv = $(".cookies");
+  var morelink = $(".morelink");
+  var cookiesmore = $(".cookiesmore");
   
    //Sprawdzenie ciasteczka   
       checkCookie();
+  
+  cookiesbutt.on("click",function(){
+    cookiesdiv.slideUp(500);
+    cookiesmore.hide(500);
+  })
+  morelink.on("click", function(e){
+    e.preventDefault();
+    cookiesmore.show(500);  
+  })
+  
+  
+  //Animacja strzałki up
+  
+  selarrow.delay(5000).animate({
+          color: 'red' 
+                  },3000);
   
   //Wybór wagonu
   
@@ -36,6 +59,7 @@ $(function() {
     
  function showCab(cabnumber) {
       $("#info").fadeIn(1000);
+      selcab.hide(100);
       switch(cabnumber) {
         case "1":
          divimg.css("background-image", 'url("./img/cab_1.jpg")');
@@ -206,7 +230,7 @@ $(function() {
         case "165":
           console.log(reslutdir);
           divdir.fadeOut(100);
-          $("h2").text("kierunek");
+          $("h2").text("kierunek jazdy");
           divdir.fadeIn(300);
           arrleft.fadeOut(100);
           arrright.delay(300).fadeIn(500);
@@ -323,7 +347,7 @@ $(function() {
         case "1615": 
           console.log(reslutdir);
            divdir.fadeOut(100);
-          $("h2").text("kierunek");
+          $("h2").text("kierunek jazdy");
           divdir.fadeIn(300);
           arrright.fadeOut(100);
           arrleft.delay(300).fadeIn(500);
@@ -345,9 +369,9 @@ $(function() {
     button.on("click", function(e){
       e.preventDefault();
       cabnumber = cabin.val();
-       arrow.fadeOut(300);
-      circle.fadeOut(300); 
-      
+       arrow.fadeOut(500);
+      circle.fadeOut(500); 
+      again.empty();
       // Wagon 1
     if (cabnumber == 1){
       seat = $(".cab1").val();
@@ -355,7 +379,7 @@ $(function() {
       for (var i = 1; i<=16; i++) {
         
         if(seat == i) {
-          arrow.delay(500).attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos1kl"+i).fadeIn(1000);
+          arrow.fadeIn(1000).attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos1kl"+i);
           circle.attr('class','circle').addClass("pos1kl"+i).fadeIn(2000);                         
               }
         
@@ -567,7 +591,7 @@ function checkCookie() {
     if ((cabc != "") && (seatc != "")) {
         console.log(cabc);
         console.log(seatc);
-      var again = $("<h3>Twoje ostatnie wyszukiwanie:</h3>");
+      
       resultdiv.prepend(again);
       cabn.text(cabc);
       seatn.text(seatc);
