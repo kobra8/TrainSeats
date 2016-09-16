@@ -5,7 +5,8 @@ $(function() {
   var divimg = $(".cabin")
   var cabin = $(".optcab");
   var circle = $(".circle");
-  var arrow = $(".arrow");
+  var arrowdown = $(".arrowdown");
+  var arrowup = $(".arrowup");
   var cabnumber = "1";
   var resultdiv = $(".result");
   var cabn = $("#cabn");
@@ -25,6 +26,7 @@ $(function() {
   var cookiesdiv = $(".cookies");
   var morelink = $(".morelink");
   var cookiesmore = $(".cookiesmore");
+  var start = $(".start");
   
    //Sprawdzenie ciasteczka   
       checkCookie();
@@ -37,20 +39,23 @@ $(function() {
     e.preventDefault();
     cookiesmore.show(500);  
   })
+  start.on("click", function(e){
+    e.preventDefault();
+    cabin.addClass("animated zoomIn");
+  })
+  start.on("mouseover", function(e){
+    e.preventDefault();
+    cabin.removeClass("animated zoomIn");
+  })
   
-  
-  //Animacja strzałki up
-  
-  selarrow.delay(5000).animate({
-          color: 'red' 
-                  },3000);
   
   //Wybór wagonu
   
   cabin.on("change", function(){
       cabnumber = cabin.val();
       showCab(cabnumber);
-      arrow.slideUp(1000);
+      arrowdown.slideUp(1000);
+      arrowup.slideUp(1000);
       resultdiv.slideUp(1000);
       cabn.hide(1000);
       seatn.hide(1000);
@@ -62,49 +67,49 @@ $(function() {
       selcab.hide(100);
       switch(cabnumber) {
         case "1":
-         divimg.css("background-image", 'url("./img/cab_1.jpg")');
+         divimg.css("background-image", 'url("./img/cab_1.jpg")').addClass("animated bounceInLeft");
           $('select[class^="cab"]').hide();
           $("#seatopt").fadeIn(1000);
           $(".cab1").fadeIn(1000);
           break;
         case "2":
-         divimg.css("background-image", 'url("./img/cab_2.jpg")');
+         divimg.css("background-image", 'url("./img/cab_2.jpg")').addClass("animated bounceInRight");
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab2").fadeIn(1000);
            break;
         case "3":
-         divimg.css("background-image", 'url("./img/cab_3.jpg")');
+         divimg.css("background-image", 'url("./img/cab_3.jpg")').addClass("animated bounceInLeft");
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab3").fadeIn(1000);
           break;
         case "4":
-         divimg.css("background-image", 'url("./img/cab_4.jpg")');
+         divimg.css("background-image", 'url("./img/cab_4.jpg")').addClass("animated bounceInRight");;
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab456").fadeIn(1000);
           break;
         case "5":
-         divimg.css("background-image", 'url("./img/cab_5.jpg")');
+         divimg.css("background-image", 'url("./img/cab_5.jpg")').addClass("animated bounceInLeft");
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab456").fadeIn(1000);
           break;
         case "6":
-         divimg.css("background-image", 'url("./img/cab_6.jpg")');
+         divimg.css("background-image", 'url("./img/cab_6.jpg")').addClass("animated bounceInRight");;
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab456").fadeIn(1000);
           break;
         case "7":
-         divimg.css("background-image", 'url("./img/cab_7.jpg")');
+         divimg.css("background-image", 'url("./img/cab_7.jpg")').addClass("animated bounceInLeft");
            $('select[class^="cab"]').hide();
            $("#seatopt").fadeIn(1000);
            $(".cab7").fadeIn(1000);
           break;
       default:
-          divimg.css("background-image", 'url("./img/selectcab.jpg")');  
+         selcab.show(100);  
       } 
    }
   
@@ -369,9 +374,10 @@ $(function() {
     button.on("click", function(e){
       e.preventDefault();
       cabnumber = cabin.val();
-       arrow.fadeOut(500);
-      circle.fadeOut(500); 
       again.empty();
+      arrowdown.slideUp(300);
+      arrowup.slideUp(300);
+      
       // Wagon 1
     if (cabnumber == 1){
       seat = $(".cab1").val();
@@ -379,17 +385,17 @@ $(function() {
       for (var i = 1; i<=16; i++) {
         
         if(seat == i) {
-          arrow.fadeIn(1000).attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos1kl"+i);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos1kl"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos1kl"+i).fadeIn(2000);                         
               }
         
         else if(seat == i+'b') {
-          arrow.delay(500).attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos1kl"+i+"b").fadeIn(1000);
+          arrowdown.delay(500).attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos1kl"+i+"b").fadeIn(1000);
           circle.delay(500).attr('class','circle').addClass("pos1b pos1kl"+i+"b").fadeIn(2000);
         }
         
         else if(seat == i+'c') {
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos1kl"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos1kl"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos1c pos1kl"+i+"c").fadeIn(2000);
         }
       }
@@ -402,22 +408,22 @@ $(function() {
         for (var i = 1; i<=17; i++) {
         if(seat == i) {
         
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i).fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos2kl"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos2a pos2kl"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
         
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"b").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"b").fadeIn(1000);
           circle.attr('class','circle').addClass("pos2b pos2kl"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos2c pos2kl"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos2d pos2kl"+i+"c").fadeIn(2000);
         }  
       }
@@ -431,22 +437,22 @@ $(function() {
         for (var i = 1; i<=5; i++) {
         if(seat == i) {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posrest"+i).fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posrest"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos3a posrest"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posrest"+i+"b").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posrest"+i+"b").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3b posrest"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posrest"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posrest"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3c posrest"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posrest"+i+"d").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posrest"+i+"d").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3d posrest"+i+"d").fadeIn(2000);
         }  
       }
@@ -460,22 +466,22 @@ $(function() {
         for (var i = 1; i<=19; i++) {
         if(seat == i) {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i).fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos2kl"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos3a pos2kl"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"b").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"b").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3b pos2kl"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos4c pos2kl"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos2kl"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos4d pos2kl"+i+"c").fadeIn(2000);
         }  
       }
@@ -489,22 +495,22 @@ $(function() {
         for (var i = 1; i<=19; i++) {
         if(seat == i) {
         
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i).fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos4d posleft"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"b").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i+"b").fadeIn(1000);
           circle.attr('class','circle').addClass("pos4c posleft"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3b posleft"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
        
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3a posleft"+i+"c").fadeIn(2000);
         }  
       }
@@ -518,22 +524,22 @@ $(function() {
         for (var i = 1; i<=16; i++) {
         if(seat == i) {
         
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos7cab"+i).slideDown(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos7cab"+i).slideDown(1000);
           circle.attr('class','circle').addClass("pos7a pos7cab"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos7cab"+i+"b").slideDown(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("pos7cab"+i+"b").slideDown(1000);
           circle.attr('class','circle').addClass("pos3b pos7cab"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
         
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos7cab"+i+"c").slideDown(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos7cab"+i+"c").slideDown(1000);
           circle.attr('class','circle').addClass("pos7c pos7cab"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
          
-          arrow.attr('class','arrow fa fa-hand-o-down fa-4x').addClass("pos7cab"+i+"c").slideDown(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("pos7cab"+i+"c").slideDown(1000);
           circle.attr('class','circle').addClass("pos7d pos7cab"+i+"c").fadeIn(2000);
         }  
       }  

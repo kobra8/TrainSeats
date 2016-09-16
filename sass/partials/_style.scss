@@ -22,20 +22,7 @@ body {
     display: none;
     padding-left: 44px;
   }
-    ul.menu {
-        list-style-type: none;
-          li{
-          color: $text-color;
-          background-color: $list-background;
-          padding: 10px;
-          display: inline-block;
-            }
-          li:hover {
-          color: $list-color;
-          padding-left: 10px;
-          display: inline-block;
-            }
-          }
+//    
   section {
   
     .cabin{
@@ -54,6 +41,15 @@ body {
           font-size: 3em;
           margin: 0 auto;
         }
+        a {
+                text-decoration: none;
+                color: white;
+              &:hover {
+                color: white;
+               @include linkshadow(white);
+                      }
+      
+                    }
         .title {
             line-height: 2;
           text-align: center;
@@ -74,14 +70,28 @@ body {
           top: 54px;
           display: none;
           }
-    .arrow {
+    .arrowdown {
       color: white;
       position: absolute;
       top: 0;
       display: none;
       }
+    .arrowup {
+      color: white;
+      position: absolute;
+      top: 145px;
+      display: none;
+      }
+    
     form {
       float: left;
+      select {
+        margin: 4px 4px 4px 4px;
+        padding: 2px 2px 2px 2px;
+      }
+      select[class^="cab"] {
+        width: 60px;
+      }
     }
     
     //Div pokazujący nr wagonu i miejsca

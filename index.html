@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trains Seats - where is my seat?</title>
+    <title>Train Seats - where is my seat in EIC Premium -> </title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,500,300,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -17,7 +18,7 @@
 <!--  Form section -->
     <section class="main-width">
       <form>
-        <label> Wybierz numer wagonu:
+        <label> Wybierz numer wagonu: &nbsp;
       <select name="cabin" class="optcab">
         <option value="0">----</option>
         <option value="1">1</option>
@@ -30,7 +31,7 @@
       </select>
     </label>
     <br>
-    <label id="seatopt"> Wybierz numer miejsca:
+    <label id="seatopt"> Wybierz numer miejsca: &nbsp;
       
 <!--      Wagon 1 -->
       <select name="seat" class="cab1">
@@ -351,7 +352,7 @@
 
       
       <button class="show">Pokaż miejsce</button> <br>
-       <label> Wybierz stację wyjazdu:
+       <label> Wybierz stację wyjazdu: &nbsp;
       <select name="from" class="from">
         <option selected value="1">Warszawa</option>
         <option value="2">Gdańsk/ Gdynia/ Sopot</option>
@@ -395,9 +396,9 @@
       <button class="direction">Pokaż kierunek</button>
     </label>
     <div class="divdir">
-      <span class="arrspanleft fa fa-long-arrow-left fa-4x" aria-hidden="true"></span>
+      <span class="animated infinite pulse arrspanleft fa fa-long-arrow-left fa-4x" aria-hidden="true"></span>
         <h2></h2>
-      <span class="arrspanright fa fa-long-arrow-right fa-4x" aria-hidden="true"></span>
+      <span class="animated infinite pulse arrspanright fa fa-long-arrow-right fa-4x" aria-hidden="true"></span>
     </div>
   </form> 
     <div class="result">
@@ -420,13 +421,13 @@
     <section class="main-width">
       <div class="cabin">
         <div class="selectcab">
-        <h1><span class="selarrow fa fa-long-arrow-up fa-2x" aria-hidden="true"></span>
-Wybierz wagon</h1>
+        <h1><a class="start" href=""><span class="animated infinite bounce selarrow fa fa-long-arrow-up fa-2x" aria-hidden="true"></span>
+Wybierz wagon</a></h1>
           <h1 class="title">Wyszukiwanie miejsca i kierunku jazdy w pociągach EIC Premium ("Pendolino")</h1>
         </div>
         <span class="circle"></span>
-        <span class="arrow fa fa-hand-o-down fa-4x" aria-hidden="true"></span>  
-        
+        <span class="arrowdown fa fa-hand-o-down fa-4x" aria-hidden="true"></span>  
+        <span class="arrowup fa fa-hand-o-up fa-4x" aria-hidden="true"></span>
        </div>
       <div class="main-width container" id="info">
         <p>
