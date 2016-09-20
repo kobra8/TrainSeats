@@ -16,7 +16,7 @@
     </header>
   
 <!--  Form section -->
-    <section class="main-width">
+    <section class="main-widthtop">
       <form>
         <label> Wybierz numer wagonu: &nbsp;
       <select name="cabin" class="optcab">
@@ -35,6 +35,7 @@
       
 <!--      Wagon 1 -->
       <select name="seat" class="cab1">
+        <option value="0">----</option>
         <option value="1c">12</option>
         <option value="1b">14</option>
         <option value="1">15</option>
@@ -92,6 +93,7 @@
       <!--      Wagon 2 -->
 
       <select name="seat" class="cab2">
+        <option value="0">----</option>
         <option value="1d">12</option>
         <option value="2b">14</option>
         <option value="1">15</option>
@@ -162,6 +164,7 @@
       <!--      Wagon 3 resturacyjny -->
       
       <select name="seat" class="cab3">
+        <option value="0">----</option>
         <option value="1d">11</option>
         <option value="3d">12</option>
         <option value="1c">13</option>
@@ -190,6 +193,7 @@
       <!--      Wagony 4 5 i 6 -->
 
       <select name="seat" class="cab456">
+        <option value="0">----</option>
         <option value="1">11</option>
         <option value="2">12</option>
         <option value="1b">13</option>
@@ -280,6 +284,7 @@
       <!--      Wagon 7 -->
 
       <select name="seat" class="cab7">
+        <option value="0">----</option>
         <option value="1d">11</option>
         <option value="2d">12</option>
         <option value="1b">14</option>
@@ -350,8 +355,8 @@
         <option value="16c">88</option>
       </select>
 
-      
-      <button class="show">Pokaż miejsce</button> <br>
+<!--      Wybór kierunku jazdy  -->
+   <br>
        <label> Wybierz stację wyjazdu: &nbsp;
       <select name="from" class="from">
         <option selected value="1">Warszawa</option>
@@ -393,6 +398,7 @@
         <option value="16">Włoszczowa</option>
       </select>
     </label>
+      <br>
       <button class="direction">Pokaż kierunek</button>
     </label>
     <div class="divdir">

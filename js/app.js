@@ -1,7 +1,6 @@
 $(function() {
-    console.log('dziala');
-  
-  var button = $(".show");
+    
+  var seatget = $('select[name=seat]'); 
   var divimg = $(".cabin")
   var cabin = $(".optcab");
   var circle = $(".circle");
@@ -27,10 +26,20 @@ $(function() {
   var morelink = $(".morelink");
   var cookiesmore = $(".cookiesmore");
   var start = $(".start");
+  var pos = 0;
+  var sitewidth = $(window).width();
+  
+  $(window).on("resize", function(){
+    sitewidth = $(window).width();
+    console.log(sitewidth);
+  });
+  
+
   
    //Sprawdzenie ciasteczka   
       checkCookie();
   
+  // Informacja o ciasteczkach
   cookiesbutt.on("click",function(){
     cookiesdiv.slideUp(500);
     cookiesmore.hide(500);
@@ -39,11 +48,12 @@ $(function() {
     e.preventDefault();
     cookiesmore.show(500);  
   })
+  // Animacja tekstu Wybierz wagon
   start.on("click", function(e){
     e.preventDefault();
     cabin.addClass("animated zoomIn");
   })
-  start.on("mouseover", function(e){
+  start.on("mouseup", function(e){
     e.preventDefault();
     cabin.removeClass("animated zoomIn");
   })
@@ -65,6 +75,7 @@ $(function() {
  function showCab(cabnumber) {
       $("#info").fadeIn(1000);
       selcab.hide(100);
+      $(".main-width").css({width: '900px'});
       switch(cabnumber) {
         case "1":
          divimg.css("background-image", 'url("./img/cab_1.jpg")').addClass("animated bounceInLeft");
@@ -252,7 +263,8 @@ $(function() {
         case "115":
         case "116":
           
-        case "25": //z Gdańska na PD
+        case "21": //z Gdańska na PD
+        case "25":
         case "26":
         case "27":
         case "28":
@@ -371,7 +383,7 @@ $(function() {
   //Fukcja wyświetlania położenia miejsca
   
   function showSeat() {
-    button.on("click", function(e){
+    seatget.on("change", function(e){
       e.preventDefault();
       cabnumber = cabin.val();
       again.empty();
@@ -556,6 +568,17 @@ $(function() {
       resultdiv.slideDown(1000);
       cabn.delay(1000).slideDown(500);
       seatn.delay(1000).slideDown(500);
+       
+      //Pozycja circle - ustawienie scrolla i marginesu dla diva Result przy resize < 600 na wybranym miejscu
+       
+       if (sitewidth < 600){
+       pos = circle.offset().left;
+       console.log(pos);
+       $("html, body").animate({ scrollLeft: pos }, 2000);
+//       resultdiv.css({marginLeft: pos / 2});
+        $(".main-widthtop").css({marginLeft: pos / 2}); 
+       }
+       
        
       // Ustawianie ciasteczka 
       setCookie("traincab", cabnumber);
