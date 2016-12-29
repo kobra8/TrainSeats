@@ -29,6 +29,7 @@ $(function() {
   var pos = 0;
   var sitewidth = $(window).width();
   
+  
   $(window).on("resize", function(){
     sitewidth = $(window).width();
     console.log(sitewidth);
@@ -70,8 +71,13 @@ $(function() {
       cabn.hide(1000);
       seatn.hide(1000);
       circle.hide(1000);
+      place = "0";
+      console.log(place);
+    return place;
   });
     
+  console.log(place);
+  
  function showCab(cabnumber) {
       $("#info").fadeIn(1000);
       selcab.hide(100);
@@ -507,22 +513,22 @@ $(function() {
         for (var i = 1; i<=19; i++) {
         if(seat == i) {
         
-          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i).fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i).fadeIn(1000);
           circle.attr('class','circle').addClass("pos4d posleft"+i).fadeIn(2000);
         }
         else if(seat == i+'b') {
        
-          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i+"b").fadeIn(1000);
+          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i+"b").fadeIn(1000);
           circle.attr('class','circle').addClass("pos4c posleft"+i+"b").fadeIn(2000);
         }
         else if(seat == i+'c') {
          
-          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3b posleft"+i+"c").fadeIn(2000);
         }
         else if(seat == i+'d') {
        
-          arrowup.attr('class','arrowup fa fa-hand-o-up fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
+          arrowdown.attr('class','arrowdown fa fa-hand-o-down fa-4x').addClass("posleft"+i+"c").fadeIn(1000);
           circle.attr('class','circle').addClass("pos3a posleft"+i+"c").fadeIn(2000);
         }  
       }
